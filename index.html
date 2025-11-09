@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum de David</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 2.5rem;
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: fadeIn 2s forwards;
+        }
+        .info {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Hola, soy David!</h1>
+    <div class="info">Desarrollador web apasionado por la tecnología y las animaciones.</div>
+    <div class="info">Experiencia en HTML, CSS, JavaScript y GitHub Pages.</div>
+    <div class="info">Explora mi currículum interactivo y descubre más sobre mí.</div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const elementos = document.querySelectorAll(".info");
+            elementos.forEach((elemento, index) => {
+                setTimeout(() => {
+                    elemento.classList.add("visible");
+                }, 500 * index);
+            });
+        });
+    </script>
+</body>
+</html>
